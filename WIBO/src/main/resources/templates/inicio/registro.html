@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/lib/css/bootstrap.min.css">
+    <title>Registro</title>
+</head>
+<body>
+<h1>Registro</h1>
+<form th:action="@{/registraUsuario}" method="GET">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="nombre">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="genero">Example select</label>
+    <select class="form-control" id="genero" name="genero">
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

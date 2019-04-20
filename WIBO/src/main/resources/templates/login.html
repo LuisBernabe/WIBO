@@ -1,21 +1,20 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sistema de Control Escolar para Cursos y Diplomados</title>
-    <link rel="stylesheet" href="css/style_login.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="/css/lib/css/bootstrap.min.css">
+<title>login</title>
+<link rel="stylesheet" href="css/style_login.css">
 </head>
 <body>
-        <div class="body"></div>
-		<div class="grad"></div>
-		<div class="header">
-			<div>Site<span>SICECD</span></div>
-		</div>
-		<br>
-		<form method="POST" th:action="@{/login}" class="login">
-				<input type="text" placeholder="username" name="username"><br>
-				<input type="password" placeholder="password" name="password"><br>
+
+	<h1>Login</h1>
+		<form method="POST" th:action="@{/login}">
+				<label for="username">Nombre</label> 
+				<input type="text" placeholder="username" name="username" class="form-control"><br>
+				<label for="password">Password</label> 
+				<input type="password" placeholder="password" name="password" class="form-control"><br>
 				<input type="submit" value="Login">
 				<div th:if="${param.error}">
             		Invalid username or password.
@@ -23,7 +22,8 @@
         		<div th:if="${param.logout}">
             		You have been logged out.
         		</div>
-		</form>    
-    
+		</form>   
+
+
 </body>
 </html>
