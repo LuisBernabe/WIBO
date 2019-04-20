@@ -21,6 +21,8 @@ public class Tesoro {
 	int pkIdPanda;
 	@Column(name = "descripcion")
 	String descripcion;
+	@Column(name = "nombre")
+	String nombre;
     @ManyToOne()
     @LazyCollection(LazyCollectionOption.FALSE)
     @JoinColumn(name="pkIdColeccionable")

@@ -19,6 +19,8 @@ public class Panda {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pkIdPanda")
 	int pkIdPanda;
+	@Column(name = "nombre")
+	String nombre;
 	@Column(name = "enUso")
 	boolean enUso;
     @ManyToOne()
