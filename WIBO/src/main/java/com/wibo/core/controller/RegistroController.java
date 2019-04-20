@@ -25,7 +25,7 @@ public class RegistroController {
 
 	@GetMapping("/registroForm")
 	public String registroForm() {
-		return "inicio/registro.html";
+		return "/inicio/registro.html";
 	}
 
 
