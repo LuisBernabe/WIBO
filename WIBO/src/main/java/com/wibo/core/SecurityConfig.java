@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http
         	.csrf().disable()
             .authorizeRequests()
-                .antMatchers("/", "/login", "/logout", "/css/**", "/fonts/**", "/img/**", "/js/**", "favicon.ico","/registraUsuario", "/registroForm").permitAll()
+                .antMatchers("/", "/login", "/logout", "/css/**", "/fonts/**", "/images/**", "/js/**", "/lib/**","favicon.ico","/registraUsuario", "/registroForm").permitAll()
                 .antMatchers("/logeado/**").hasAuthority("Activo")
                 .anyRequest().authenticated()
             .and().formLogin()
@@ -30,7 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .loginProcessingUrl("/login")
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/inicio")
+                .defaultSuccessUrl("/hola")
+                //.failureUrl("/error")
                 .permitAll()
             .and().logout()//logout configuration
         		.logoutUrl("/logout")
@@ -45,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
    	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
     	      BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
               auth.userDetailsService(myAppUserDetailsService).passwordEncoder(passwordEncoder);
+              System.out.println("[ENTRA]----------");
 	}
 	//*/
 

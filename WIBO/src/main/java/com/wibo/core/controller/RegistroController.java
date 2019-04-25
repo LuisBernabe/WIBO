@@ -6,11 +6,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,38 +25,41 @@ import com.wibo.core.repo.JugadorRep;
 public class RegistroController {
 	@Autowired
 	JugadorRep _jugador;
+	
+String user="";
+String pass="";
 
-	@GetMapping("/registroForm")
-	public String registroForm() {
-		return "/inicio/registro.html";
+
+	
+	@GetMapping("/algoraropasa")
+	public String inicio() {
+		return "index";
 	}
 
-
-	@GetMapping("/registraUsuario")
-	public String registraUsuario(
-			@RequestParam (name = "nombre") String nombre,
-			@RequestParam (name = "password") String password//,
-			//@RequestParam (name = "genero") String genero
-			) {
-		Jugador nuevo=new Jugador();
-		nuevo.setNombre(nombre);
+	@PostMapping("/registraUsuario")
+	public ResponseEntity<String> registraUsuario(@RequestBody Jugador nuevo) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		nuevo.setPassword(passwordEncoder.encode(password));
-		//nuevo.setGenero(genero);
+		nuevo.setPassword(passwordEncoder.encode(nuevo.getPassword()));
 		nuevo.setEstatus("Activo");
 		nuevo.setPower(0);
 		_jugador.save(nuevo);
-		
-		
-		return "redirect:/login";	
+
+		return ResponseEntity.ok("Jugador Agregado con exito");
 	}
-	
-	@RequestMapping(value = { "/login", "/" }, method = RequestMethod.GET)
-	public String login(Model model, String error, String logout) {
+
+	@RequestMapping(value = {"/", "/login" }, method = RequestMethod.GET)
+	public String login(Model model, String error, String logout, HttpServletRequest request) {
+		user=request.getParameter("username");
+		pass=request.getParameter("password");
+		
+		System.out.println(user+"--------");
+		
 		if (error != null) {
 			model.addAttribute("errorMsg", "Your username or password are invalid.");
 			System.out.println(error);
 			System.out.println("\nUsuario erroneo-");
+		}else {
+			System.out.println("\nUsuario logeado-");
 		}
 
 		if (logout != null)
@@ -75,9 +81,9 @@ public class RegistroController {
 		}
 		return "login";
 	}
-	
-	@RequestMapping(value = "/inicio", method = RequestMethod.GET)
-	public String exampleTableBasic(Model model){
-		return "inicio/inicio";
-	}	
+
+	@RequestMapping(value = "/hola", method = RequestMethod.GET)
+	public String exampleTableBasic(Model model) {
+		return "juego/menuprincipal";
+	}
 }

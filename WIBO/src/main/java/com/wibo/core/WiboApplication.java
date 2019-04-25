@@ -44,13 +44,15 @@ public class WiboApplication implements WebMvcConfigurer {
         registry.addResourceHandler(
                 "/css/**",
                 "/fonts/**",
-                "/img/**",
-                "/js/**")
+                "/images/**",
+                "/js/**",
+                "/lib/**")
                 .addResourceLocations(
                         "classpath:/static/css/",
                         "classpath:/static/fonts/",
-                        "classpath:/static/img/",
-                        "classpath:/static/js/");
+                        "classpath:/static/images/",
+                        "classpath:/static/js/",
+                        "classpath:/static/lib/");
     }	
 
 	public static void main(String[] args) {

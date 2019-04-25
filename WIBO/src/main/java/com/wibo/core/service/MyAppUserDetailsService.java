@@ -26,6 +26,7 @@ public class MyAppUserDetailsService implements UserDetailsService {
 		GrantedAuthority authority = new SimpleGrantedAuthority(activeUserInfo.getEstatus());
 		UserDetails userDetails = (UserDetails)new User(activeUserInfo.getNombre(),
 				activeUserInfo.getPassword(), Arrays.asList(authority));
+		System.out.println("[BUSCA]........");
 		return userDetails;
 	}
 }
