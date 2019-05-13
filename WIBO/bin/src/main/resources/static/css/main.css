@@ -1,0 +1,36 @@
+body::after{
+    background: url("/images/game-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.btn{
+    background-color: #5f5134;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #5f5134;
+    border-radius: 40px;
+}
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    background-color: #cfa672;
+    border-color: #5f5134;
+}
+.opacity{
+    background-color: rgba(10,10,10,0.6);
+}
+

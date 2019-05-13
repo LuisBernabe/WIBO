@@ -1,0 +1,12 @@
+body::after {
+    background-image: url("/images/sushi-pattern2.png");
+    background-repeat: repeat;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
