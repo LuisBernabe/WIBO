@@ -1,5 +1,22 @@
-.container{
-    padding: 3%;
+body::after{
+    background: url("/images/game-bg-no-title.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+.container>div{
+    padding: 2%;
+    width: 60%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(30%);
 }
 .panel-login {
     border-color: #ccc;
@@ -53,23 +70,6 @@
     box-shadow: none;
     border-color: #ccc;
 }
-.btn-login {
-    background-color: #5f5134;
-    outline: none;
-    color: #fff;
-    font-size: 14px;
-    height: auto;
-    font-weight: normal;
-    padding: 14px 0;
-    text-transform: uppercase;
-    border-color: #5f5134;
-}
-.btn-login:hover,
-.btn-login:focus {
-    color: #fff;
-    background-color: #cfa672;
-    border-color: #5f5134;
-}
 .forgot-password {
     text-decoration: underline;
     color: #888;
@@ -78,22 +78,4 @@
 .forgot-password:focus {
     text-decoration: underline;
     color: #666;
-}
-
-.btn-register {
-    background-color: #5f5134;
-    outline: none;
-    color: #fff;
-    font-size: 14px;
-    height: auto;
-    font-weight: normal;
-    padding: 14px 0;
-    text-transform: uppercase;
-    border-color: #5f5134;
-}
-.btn-register:hover,
-.btn-register:focus {
-    color: #fff;
-    background-color: #cfa672;
-    border-color: #5f5134;
 }

@@ -1,43 +1,74 @@
-html, body {
-    height:100%;
-    margin:0;
-    padding:0;
+body::after{
+    background: url("/images/game-bg-full.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
 }
-body {overflow-y:hidden!important;}
-.carousel, .item, .active {
-    height:100%;
+.container{
+    width: 95% !important;
+    margin: auto;
 }
-.carousel-inner {
-    height:100%;
-}
-.carousel {
-    margin-bottom: 60px;
-}
-.carousel-caption {
-    z-index: 10;
-}
-.carousel .item {
-    background-color: #777;
-}
-.carousel .carousel-inner .bg {
-    background-repeat:no-repeat;
-    background-size:cover;
-}
-.carousel .carousel-inner .bg1 {
-    background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/spiderweb.jpg');
-    background-position: center top;
-}
-.carousel .carousel-inner .bg2 {
-    background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/hearthand.jpg');
-    background-position: center center;
-}
-.carousel .carousel-inner .bg3 {
-    background-image:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/158072/woman-camera.jpg');
-    background-position: center bottom;
-}
-.over{
-    z-index: 1;
-    position: absolute;
-    top: 65%;
 
+.row{
+    height: 36% !important;
 }
+.space{height: 7% !important;}
+
+.container>div{
+    height: auto;
+    position: initial;
+    padding: 0px;
+}
+
+img{width: 100%;}
+
+.MultiCarousel {
+    float: left;
+    overflow: hidden;
+    padding: 15px;
+    width: 100%;
+    position:relative;
+}
+
+.MultiCarousel-inner { transition: 1s ease all;
+    float: left;
+}
+
+.MultiCarousel-inner .item {
+    float: left;
+}
+
+.MultiCarousel-inner .item > div {
+    text-align: center;
+    padding:10px;
+    margin:10px;
+    background:#333;
+}
+
+.leftLst, .MultiCarousel .rightLst {
+    position:absolute;
+    border-radius:50%;
+    top:calc(50% - 20px);
+}
+
+.leftLst {
+    left:0;
+    width: 50px;
+}
+
+.rightLst {
+    right:0;
+    width: 50px;
+}
+
+.leftLst.over, .MultiCarousel .rightLst.over {
+    pointer-events: none;
+    background:#ccc;
+}
+

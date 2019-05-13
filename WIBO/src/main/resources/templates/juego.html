@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="src/app.js"></script>
+    <!-- <script src="bundle.js"></script> ARCHIVO COMPRIMIDO-->
+    <link rel="stylesheet" href="/css/juego.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="fondo">
+
+            <div id="head">
+                <div id="rej">
+
+                    <canvas id="reloj" width="90px" height="90px"></canvas>
+                </div>
+                <div id="score">0</div>
+            </div>
+            <div id="receta">
+
+                <img src="/images/cocina/s1.png" class="simbolo" alt="">
+                <img src="" class="objeto" objeto=1 alt="">
+                <img src="/images/cocina/s2.png" class="simbolo" alt="">
+                <img src="" class="objeto" objeto=2 alt="">
+                <img src="/images/cocina/s3.png" class="simbolo" alt="">
+                <img src="" class="objeto" objeto=3 alt="">
+                <img src="/images/cocina/s4.png" class="simbolo" alt="">
+                <img src="" class="objeto" objeto=4 alt="">
+                <img src="/images/cocina/s5.png" class="simbolo" alt="">
+                <img src="" class="objeto" objeto=5 alt="">
+            </div>
+            <div id="vacio"></div>
+            <div id="cuchito"></div>
+        </div>
+        <!-- SOLO HAY 8 ingredientes -->
+        <div id="ingredientes">
+            <div></div>
+            <div class="ingcon" id="ing1"><img src="/images/cocina/1.png" class="ingre"  id="img1"  tipo="1"  ></div>
+            <div class="ingcon" id="ing2"><img src="/images/cocina/2.png" class="ingre"  id="img2"  tipo="2"  ></div>
+            <div class="ingcon" id="ing3"><img src="/images/cocina/3.png" class="ingre"  id="img3"  tipo="3"  ></div>
+            <div class="ingcon" id="ing3"><img src="/images/cocina/4.png" class="ingre"  id="img4"  tipo="4"  ></div>
+            <!-- CAMBIAR LA IMAGEN  EL ID EL TIPO DE INGREDIENTE, Y EL NUMERO DE ingredientes -->
+
+        </div>
+
+
+        <div id="casuela">
+        <div id="cas"></div>
+        <div id="masingresR">
+                <div class="ingcon" id="ing1"><img src="/images/cocina/5.png" class="ingre" draggable="false" id="img5"  tipo="5"  ></div>
+                <div class="ingcon" id="ing2"><img src="/images/cocina/6.png" class="ingre" draggable="false" id="img6"  tipo="6"  ></div>
+                <div class="ingcon" id="ing2"><img src="/images/cocina/7.png" class="ingre" draggable="false" id="img7"  tipo="7"  ></div>
+                <div class="ingcon" id="ing2"><img src="/images/cocina/8.png" class="ingre" draggable="false" id="img8"  tipo="8"  ></div>
+        </div>
+        </div>
+
+
+
+    </div>
+        <script src="/lib/js/jquery.min.js"></script>
+    <script src="/js/bundle.js"></script>
+
+</body>
+
+</html>

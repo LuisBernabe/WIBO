@@ -1,0 +1,48 @@
+body, html{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-image: url("/images/game-bg-full.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+#contenedor{
+    width: 100%;
+    height: 80%;
+    margin-top: 5%;
+    background-color:rgba(0,0,0,.5);
+    display: grid;
+    grid-gap: 1fr;
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 350px;
+    justify-content: space-around;
+    align-content: center;
+
+ 
+
+}
+
+
+#camara{
+border-radius: 70px;
+background-color: rgb(203, 157, 70);
+display: flex;
+}
+
+#sushi{
+    display: flex;
+    border-radius: 70px;
+    background-color: rgb(203, 157, 70);
+    }
+
+#cam{
+align-self: center;
+margin: 0 auto;
+}
+#su{
+align-self: center;
+margin: 0 auto;
+}

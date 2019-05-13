@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/css/bootstrap.css">
+    <link rel="stylesheet" href="/images/icons/font/css/open-iconic.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/carousel.css">
     <title>Aventuras</title>
 </head>
 <body>
-<div id="carouselExampleIndicators" class="carousel" data-ride="carousel" data-interval="false">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <form action="menu-aventura.html" method="get" id="aventuras"></form>
+<div class="container">
+    <div class="row"></div>
+    <div class="row justify-content-center align-middle">
+        <div class="MultiCarousel slide" data-items="3,3,4"
+             data-slide="1" id="MultiCarousel"  data-ride="carousel"
+             data-interval="1000">
+            <div class="MultiCarousel-inner" id ="aventuras">
+            </div>
+            <button class="btn leftLst"><</button>
+            <button class="btn rightLst">></button>
+        </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+    <div class="space"></div>
+    <div class="row">
+        <div class="col-1 col-sm-2">
+            <button class="btn w-75" onclick="goBack()">
+                <span class="oi" data-glyph="arrow-thick-left"></span>
+            </button>
+        </div>
+        <div class="col-11 col-sm-8"></div>
+    </div>
 </div>
     <!--------------------------------------------------------->
     <script src="/lib/js/jquery.min.js"></script>
+    <script src="/lib/js/jquery.mobile.min.js"></script>
     <script src="/lib/js/popper.min.js"></script>
-    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/lib/js/bootstrap3.min.js"></script>
     <!--------------------------------------------------------->
+    <script src="/js/main.js"></script>
     <script src="/js/aventuras.js"></script>
 </body>
 </html>

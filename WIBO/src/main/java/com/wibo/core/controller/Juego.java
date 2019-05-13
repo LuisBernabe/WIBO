@@ -11,4 +11,15 @@ public class Juego {
 	public String aventuras() {
 		return "juego/aventuras";
 	}
+	@GetMapping (value = "/coleccion")
+	private String coleccion() {
+
+		return "juego/coleccion";
+
+	}
+	
+	@GetMapping(value = "juego")
+	private String cocina() {
+		return "juego";
+	}
 }

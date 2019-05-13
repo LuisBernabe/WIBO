@@ -26,8 +26,6 @@ public class RegistroController {
 	@Autowired
 	JugadorRep _jugador;
 	
-String user="";
-String pass="";
 
 
 	
@@ -37,22 +35,26 @@ String pass="";
 	}
 
 	@PostMapping("/registraUsuario")
-	public ResponseEntity<String> registraUsuario(@RequestBody Jugador nuevo) {
+	public String registraUsuario(@RequestParam (name = "username") String nombre,
+													@RequestParam(name = "password") String pass,
+													@RequestParam (name = "inlineRadioOptions") String genero) {
+		
+		Jugador nuevo=new Jugador();
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		nuevo.setPassword(passwordEncoder.encode(nuevo.getPassword()));
+		nuevo.setPassword(passwordEncoder.encode(pass));
 		nuevo.setEstatus("Activo");
 		nuevo.setPower(0);
+		nuevo.setNombre(nombre);
+		nuevo.setGenero(genero);
+		
 		_jugador.save(nuevo);
 
-		return ResponseEntity.ok("Jugador Agregado con exito");
+		return "login";
 	}
 
 	@RequestMapping(value = {"/", "/login" }, method = RequestMethod.GET)
 	public String login(Model model, String error, String logout, HttpServletRequest request) {
-		user=request.getParameter("username");
-		pass=request.getParameter("password");
-		
-		System.out.println(user+"--------");
+
 		
 		if (error != null) {
 			model.addAttribute("errorMsg", "Your username or password are invalid.");
@@ -86,4 +88,13 @@ String pass="";
 	public String exampleTableBasic(Model model) {
 		return "juego/menuprincipal";
 	}
+	
+	@GetMapping("prueba")
+	private String prueba() {
+		return "";
+
+	}
+	
+	
+
 }
