@@ -11,6 +11,10 @@ public class Juego {
 	public String aventuras() {
 		return "juego/aventuras";
 	}
+	@GetMapping(value = "menuaventuras")
+	public String menuaventuras() {
+		return "juego/menuaventuras";
+	}
 	@GetMapping (value = "/coleccion")
 	private String coleccion() {
 
