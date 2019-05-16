@@ -8,28 +8,55 @@ html, body{
     padding: 0%;
     max-width: 100%;
     max-height: 100%;
-/*     overflow-x: hidden; */
-/*     overflow-y: hidden; */
      box-sizing: content-box;
 }
 
 body{
     background-size: 100vw 100vh ;
-    background-repeat: no-repeat, no-repeat; 
+    background-repeat: no-repeat no-repeat; 
     background-image:  url('/images/cocina/fondo.GIF');
 }
 
 canvas{
-	top:0;
+}
+#pausar{
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	background-image: url("/images/cocina/pausa.png");
+	background-size: 100%;
+	align-self: center;
+    justify-self: center;
 }
 
+
+#resume{
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	background-image: url("/images/cocina/resume.png");
+	background-size: 100%;
+	align-self: center;
+    justify-self: center;
+}
+#restart{
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	background-image: url("/images/cocina/restart.png");
+	background-size: 100%;
+	align-self: center;
+    justify-self: center;
+}
 
  #rej{
     grid-row-end: reloj;
     grid-row-start:reloj ;
     grid-column-start: reloj;
     grid-column-end: reloj;  
-    padding:0%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
     align-self: stretch;
     justify-self: stretch;
 
@@ -112,8 +139,8 @@ canvas{
     grid-column-start: receta;
     grid-column-end: receta;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 50% 50%;
     grid-template-areas:    "simbolo imagen"
                             "simbolo imagen"
                             "simbolo imagen"
@@ -128,7 +155,7 @@ canvas{
     grid-column-end: mesa;
     display: grid;
     grid-template-rows: 50% 50%;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 16.6%);
     grid-template-areas:    "ing1 ing2 ing3 ing4 ing5 ing6"
     						"ing1 ing2 casuela casuela ing5 ing6";
 
@@ -155,7 +182,7 @@ canvas{
     grid-column-start: head;
     grid-column-end: head;  
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: 100%;
     grid-template-columns: 18% 24% 27% 10% 1fr ;
     grid-template-areas:    "finl reloj vacio score finr";
     align-items: baseline;
@@ -200,18 +227,39 @@ font-family: fuji;
     
 }
 
-#modal1{
-    background: url('/images/cocina/fondo.GIF');
-    background-size: cover;
+#transp{
+	background-color:rgba(0,0,0,0.0);
     width: 500px;
     height: 300px;
 
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:    "resume restar";
+
 }
 
+.transp{
+	background-color:rgba(0,0,0,0.0);
+}
+
+#modal1{
+	width: 100%;
+	height: 100%;
+    background: url('/images/cocina/pausap.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    display: grid;
+    grid-template-rows: 44% 36% 20% ;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:    "nada nada"
+     						"pausar resume"
+     						"nada nada";
+
+}
+
+#tiempo{
+	font-family: fuji;
+    font-size: 2em;
+    align-self: center;
+    justify-self: center;
+}
 
 .ingcon{
     display: flex;

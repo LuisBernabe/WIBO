@@ -21,10 +21,19 @@
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="transp modal-content">
+            <div id="transp" class="transp">
             <div id="modal1">
-                    <button type="button" id="resume" class="btn btn-success" data-dismiss="modal">resume</button>
-                    <button type="button" class="btn btn-danger">restar</button>
+            
+            <div></div>
+            <div></div>
+                    <button type="button" id="resume" class="btn btn-success" data-dismiss="modal"></button>
+                    <button type="button" id="restart" class="btn btn-danger"></button> 
+            <div></div>
+            <div></div>
+            
+            
+            </div>
             </div>
           </div>
         </div>
@@ -46,12 +55,32 @@
 <audio id="inicial">
     <source src="/fonts/bonapetit.mp3" type="audio/mpeg">
 </audio>
-<audio id="tururu">
-    <source src="/fonts/tururu.mp3" type="audio/mpeg">
-</audio>
 <audio id="myamya">
     <source src="/fonts/myamya.mp3" type="audio/mpeg">
 </audio>
+<audio id="tururu">
+    <source src="/fonts/tururu.mp3" type="audio/mpeg">
+</audio>
+<audio id="n1">
+    <source src="/fonts/1.m4a" type="audio/mpeg">
+</audio>
+<audio id="n2">
+    <source src="/fonts/2.m4a" type="audio/mpeg">
+</audio>
+<audio id="n3">
+    <source src="/fonts/3.m4a" type="audio/mpeg">
+</audio>
+<audio id="n4">
+    <source src="/fonts/4.m4a" type="audio/mpeg">
+</audio>
+<audio id="n5">
+    <source src="/fonts/5.m4a" type="audio/mpeg">
+</audio>
+
+
+
+
+
     <div id="contenedor">
         <div id="fondo">
 
@@ -59,11 +88,12 @@
                 <div id="rej">
 
                     <canvas id="reloj" width="90px" height="90px"></canvas>
+                    <div id="tiempo"></div>
                 </div>
                 <div id="score">0</div>
                 <div id="pausa">
                 <button id="pausar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        			Pausa ||
+        			
    				</button>
                 </div>
             </div>

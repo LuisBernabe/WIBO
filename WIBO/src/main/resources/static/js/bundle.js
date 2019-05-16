@@ -2,6 +2,13 @@ window.addEventListener("load", function(evt) {
     //RELOJ
 	var x = document.getElementById("inicial"); 
 	var b = document.getElementById("myamya"); 
+	var n1 = document.getElementById("n1"); 
+	var n2 = document.getElementById("n2"); 
+	var n3 = document.getElementById("n3"); 
+	var n4 = document.getElementById("n4"); 
+	var n5 = document.getElementById("n5"); 
+	
+	let numeros=[n1,n2,n3,n4,n5];
 
     let canvas = document.getElementById("reloj");
     let context = canvas.getContext("2d");
@@ -26,7 +33,7 @@ window.addEventListener("load", function(evt) {
     let counter_time = 0;
     let time_step = 0.1;
     let animacion;
-    let tiempo = 10; //TIEMPO RESTANTE EN SEGUNDOS
+    let tiempo = 120; //TIEMPO RESTANTE EN SEGUNDOS
 
 
     function gameLoop() {
@@ -49,6 +56,7 @@ window.addEventListener("load", function(evt) {
            }
            if (counter_time > 1.0) {
                --cuenta;
+               numeros[cuenta].play();
                $("#cuchito").text(cuenta);
                $("#cuchito").css({
                    opacity: '1.0',
@@ -65,7 +73,7 @@ window.addEventListener("load", function(evt) {
 		
        } else {
 
-
+    	   $("#tiempo").text(tiempo*2-counter_time.toFixed(0));
            context.beginPath();
            context.lineWidth = 20;
            context.strokeStyle = '#cc0000' ;
@@ -152,6 +160,7 @@ let acabados=0;
     $('#cas').on('drop', function (e) {
         e.preventDefault();
         e.stopPropagation();
+        numeros[ingredientes[datos.indx]-1].play();
         --ingredientes[datos.indx];
         
         
