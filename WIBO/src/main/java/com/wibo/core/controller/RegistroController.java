@@ -91,7 +91,7 @@ public class RegistroController {
 	
 	@GetMapping("prueba")
 	private String prueba() {
-		return "";
+		return "juego";
 
 	}
 	

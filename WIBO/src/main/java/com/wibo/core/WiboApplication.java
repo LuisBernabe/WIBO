@@ -52,6 +52,7 @@ public class WiboApplication implements WebMvcConfigurer {
                         "classpath:/static/fonts/",
                         "classpath:/static/images/",
                         "classpath:/static/js/",
+                        "classpath:/static/sounds/",
                         "classpath:/static/lib/");
     }	
 

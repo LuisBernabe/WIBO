@@ -1,144 +1,55 @@
+@font-face {
+    font-family: fuji;
+    src: url("/fonts/Gyosho.ttf");
+    }
+
 html, body{
     margin: 0%;
     padding: 0%;
     max-width: 100%;
     max-height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+/*     overflow-x: hidden; */
+/*     overflow-y: hidden; */
+     box-sizing: content-box;
 }
 
 body{
-    background-size: 32%, 100%;
+    background-size: 100vw 100vh ;
     background-repeat: no-repeat, no-repeat; 
-    background-image: url('/images/cocina/chuchito.gif'), url('/images/cocina/fondo.jpeg');
-    background-position: 0 100%, 0 0;
+    background-image:  url('/images/cocina/fondo.GIF');
 }
 
-#reloj{
-    align-content: end;
-}
-#contenedor{
-    width: 100%;
-    height: 100%;
-    padding: 0%;
-    max-width: 100%;
-    max-height: 100%;
-    padding: 0%;
-    display: grid;
-    grid-template-rows: 57% 11% 32%;
-    grid-template-columns: 1fr;
-    grid-template-areas:    "fondo"
-                            "ingredientes"
-                            "casuela";
-
+canvas{
+	top:0;
 }
 
-#fondo{
-    grid-row-end: fondo;
-    grid-row-start:fondo ;
-    grid-column-start: fondo;
-    grid-column-end: fondo;
-    display: grid;
-    grid-template-rows: 20% 1fr 10%;
-    grid-template-columns: 25% 85%;
-    grid-template-areas:    "receta head"
-                            "receta chuchito"
-                            "vacio chuchito";
-}
-
-
-#head{
-    background: url('/images/cocina/menu.jpg');
-    background-size: 89% 100%;
-    background-repeat: no-repeat;
-    grid-row-end: head;
-    grid-row-start:head ;
-    grid-column-start: head;
-    grid-column-end: head;  
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 17% 23% 16% 9% 1fr ;
-    grid-template-areas:    "finl reloj vacio score finr";
-    align-items: baseline;
-    justify-items: center;
-    padding-top: 0%;
-
-
-} 
 
  #rej{
     grid-row-end: reloj;
     grid-row-start:reloj ;
     grid-column-start: reloj;
     grid-column-end: reloj;  
-    display: flex;
-    /* justify-content: center;
-    align-content: center; */
+    padding:0%;
+    align-self: stretch;
+    justify-self: stretch;
+
+
 
 }
 
 
-#score{
-    font-family: Comic Sans MS;
-    font-size: 2em;
-    grid-row-end: score;
-    grid-row-start:score ;
-    grid-column-start: score;
-    grid-column-end: score;
+
+.ingre{
+    width: 70%;
+    height: 70%;
     align-self: center;
     justify-self: center;
-}
 
-
-#receta{
-    background-image: url('/images/cocina/receta.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    grid-row-end: receta;
-    grid-row-start:receta ;
-    grid-column-start: receta;
-    grid-column-end: receta;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 15%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:    "simbolo imagen"
-                            "simbolo imagen"
-                            "simbolo imagen"
-                            "simbolo imagen"
-                            "simbolo imagen"
-                            "void void";
-    justify-content: center;
-    align-content: center;
-
-}
-
-
-
-
-#ingredientes{
-    grid-row-end: ingredientes;
-    grid-row-start: ingredientes;
-    grid-column-start: ingredientes;
-    grid-column-end: ingredientes;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 29% 1fr 1fr 1fr 1fr;
-    grid-template-areas:    "vacio ing1 ing2 ing3 ing4"
-
-
-}
-.ingre{
-    width: 30%;
-    /* -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
 }
 
 .ingre:hover{
-    width: 40%;
+    width: 90%;
+    height: 90%;
 }
 
 .simbolo{
@@ -155,6 +66,151 @@ body{
     justify-self: baseline;
 }
 
+#cas{
+	width: 90%;
+	height: 90%;
+
+}
+
+
+
+
+#contenedor{
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0%;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+    grid-template-areas:    "fondo"
+                            "mesa";
+
+    
+
+}
+
+
+#fondo{
+    grid-row-end: fondo;
+    grid-row-start:fondo ;
+    grid-column-start: fondo;
+    grid-column-end: fondo;
+    display: grid;
+    grid-template-rows: 20% 52% 28%;
+    grid-template-columns:3% 27% 70%;
+    grid-template-areas:    "espacio receta head"
+                            "espacio receta chuchito"
+                            "espacio vacio chuchito";
+}
+
+#receta{
+    grid-row-end: receta;
+    grid-row-start:receta ;
+    grid-column-start: receta;
+    grid-column-end: receta;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:    "simbolo imagen"
+                            "simbolo imagen"
+                            "simbolo imagen"
+                            "simbolo imagen";
+
+
+}
+#mesa{
+    grid-row-end: mesa;
+    grid-row-start: mesa;
+    grid-column-start: mesa;
+    grid-column-end: mesa;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:    "ing1 ing2 ing3 ing4 ing5 ing6"
+    						"ing1 ing2 casuela casuela ing5 ing6";
+
+
+}
+
+#casuela{
+    grid-row-end: casuela;
+    grid-row-start:casuela ;
+    grid-column-start:casuela ;
+    grid-column-end: casuela;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+
+}
+
+
+#head{
+
+    grid-row-end: head;
+    grid-row-start:head ;
+    grid-column-start: head;
+    grid-column-end: head;  
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 18% 24% 27% 10% 1fr ;
+    grid-template-areas:    "finl reloj vacio score finr";
+    align-items: baseline;
+    justify-items: center;
+    padding-top: 0%;
+
+
+} 
+
+
+
+
+#score{
+	font-family: fuji;
+    font-size: 2em;
+    grid-row-end: score;
+    grid-row-start:score ;
+    grid-column-start: score;
+    grid-column-end: score;
+    align-self: center;
+    justify-self: center;
+}
+
+
+
+#cuchito{
+font-family: fuji;
+    font-size: 20em;
+    color: rgb(70, 157, 197);
+	grid-row-end: chuchito;
+    grid-row-start: chuchito ;
+    grid-column-start: chuchito;
+    grid-column-end: chuchito;
+}
+
+
+#pausa{
+	grid-row-end: finr;
+    grid-row-start: finr ;
+    grid-column-start: finr;
+    grid-column-end: finr;  
+    
+}
+
+#modal1{
+    background: url('/images/cocina/fondo.GIF');
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:    "resume restar";
+}
 
 
 .ingcon{
@@ -163,42 +219,12 @@ body{
     align-content: center;
 }
 
-#casuela{
-    grid-row-end: casuela;
-    grid-row-start:casuela ;
-    grid-column-start:casuela ;
-    grid-column-end: casuela;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 29% 1fr 27%;
-    grid-template-areas:    "vacio cas masingresr";
-
-}
-
-#masingresR{
-    grid-row-end: masingresr;
-    grid-row-start: masingresr;
-    grid-column-start: masingresr;
-    grid-column-end: masingresr;
-    display: grid;
-    grid-template-rows: 1fr 1fr 20%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:    "ingred1 ingred2"
-                            "ingred4 ingred4"
-                            "vacio vacio";
-
-
-}
+/*
 
 
 
 
-#cas{
-    grid-row-end: cas;
-    grid-row-start: cas;
-    grid-column-start: cas;
-    grid-column-end: cas;
-}
+*/
 
 
 
