@@ -39,7 +39,7 @@ window.addEventListener("load", function(evt) {
     let counter_time = 0;
     let time_step = 0.1;
     let animacion;
-    let tiempo = 15; //TIEMPO RESTANTE EN SEGUNDOS
+    let tiempo = 60; //TIEMPO RESTANTE EN SEGUNDOS
 
 
     function gameLoop() {
