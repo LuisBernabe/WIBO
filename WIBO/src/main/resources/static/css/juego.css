@@ -230,7 +230,7 @@ font-family: fuji;
 #transp{
 	background-color:rgba(0,0,0,0.0);
     width: 500px;
-    height: 300px;
+    height: 400px;
 
 
 }
@@ -243,7 +243,21 @@ font-family: fuji;
 	width: 100%;
 	height: 100%;
     background: url('/images/cocina/pausap.png');
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    display: grid;
+    grid-template-rows: 44% 36% 20% ;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:    "nada nada"
+     						"pausar resume"
+     						"nada nada";
+
+}
+#modal2{
+	width: 100%;
+	height: 100%;
+    background: url('/images/cocina/end.png');
+    background-size: 100%;
     background-repeat: no-repeat; 
     display: grid;
     grid-template-rows: 44% 36% 20% ;

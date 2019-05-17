@@ -33,7 +33,7 @@ window.addEventListener("load", function(evt) {
     let counter_time = 0;
     let time_step = 0.1;
     let animacion;
-    let tiempo = 120; //TIEMPO RESTANTE EN SEGUNDOS
+    let tiempo = 2; //TIEMPO RESTANTE EN SEGUNDOS
 
 
     function gameLoop() {
@@ -80,7 +80,7 @@ window.addEventListener("load", function(evt) {
            context.arc(45, 45, 20, 0, (counter_time / tiempo) * Math.PI);
            context.stroke();
            if ((counter_time / tiempo) > 2) {
-               alert("Tiempo agotado"); //FIN DEL JUEGO
+               $('#final').modal('show');
                window.cancelAnimationFrame(animacion);
 
            }
