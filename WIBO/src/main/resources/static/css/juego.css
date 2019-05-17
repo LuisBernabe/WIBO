@@ -39,6 +39,7 @@ canvas{
 	align-self: center;
     justify-self: center;
 }
+
 #restart{
 	width: 120px;
 	height: 120px;
@@ -210,8 +211,9 @@ canvas{
 
 #cuchito{
 font-family: fuji;
-    font-size: 20em;
+    font-size: 30em;
     color: rgb(70, 157, 197);
+    padding-left:17%;
 	grid-row-end: chuchito;
     grid-row-start: chuchito ;
     grid-column-start: chuchito;
@@ -260,12 +262,63 @@ font-family: fuji;
     background-size: 100%;
     background-repeat: no-repeat; 
     display: grid;
-    grid-template-rows: 44% 36% 20% ;
+    grid-template-rows: 37% 5% 31% 9% 20%;
     grid-template-columns: 50% 50%;
-    grid-template-areas:    "nada nada"
-     						"pausar resume"
-     						"nada nada";
+    grid-template-areas:    "naya naya"
+     						"nrecetas nrecetas"
+     						"escore escore"
+     						"denuez terminar"
+     						"naya2 naya2";
 
+}
+
+
+
+#finr{
+	grid-row-end: finr;
+    grid-row-start: finr ;
+    grid-column-start: finr;
+    grid-column-end: finr;  
+    
+}
+#nrecetas{
+	font-family: fuji;
+    font-size: 1.2em;
+	grid-row-end: nrecetas;
+    grid-row-start: nrecetas ;
+    grid-column-start: nrecetas;
+    grid-column-end: nrecetas; 
+    padding-left: 75%; 
+    
+
+}
+#escore{
+	font-family: fuji;
+    font-size: 4em;
+	grid-row-end: escore;
+    grid-row-start: escore ;
+    grid-column-start: escore;
+    grid-column-end: escore; 
+    align-self: center;
+    justify-self: center;    
+}
+#denuez{
+	grid-row-end: denuez;
+    grid-row-start: denuez ;
+    grid-column-start: denuez;
+    grid-column-end: denuez;
+    margin-left: 30%;
+    margin-right: 10%  
+    
+}
+#terminar{
+	grid-row-end: terminar;
+    grid-row-start: terminar ;
+    grid-column-start: terminar;
+    grid-column-end: terminar;
+    margin-left: 10%;
+    margin-right: 30%    
+    
 }
 
 #tiempo{

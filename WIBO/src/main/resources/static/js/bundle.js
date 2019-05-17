@@ -1,14 +1,20 @@
 window.addEventListener("load", function(evt) {
     //RELOJ
 	var x = document.getElementById("inicial"); 
+	x.volume = 0.2;
 	var b = document.getElementById("myamya"); 
+	x.volume = 0.2;
+	var ha = document.getElementById("nyahaha"); 
 	var n1 = document.getElementById("n1"); 
 	var n2 = document.getElementById("n2"); 
 	var n3 = document.getElementById("n3"); 
 	var n4 = document.getElementById("n4"); 
 	var n5 = document.getElementById("n5"); 
+	let escore=0;
+	let acabados=0;
+	let nrecetas=0;
 	
-	let numeros=[n1,n2,n3,n4,n5];
+	let numeros=[ha,n1,n2,n3,n4,n5];
 
     let canvas = document.getElementById("reloj");
     let context = canvas.getContext("2d");
@@ -33,7 +39,7 @@ window.addEventListener("load", function(evt) {
     let counter_time = 0;
     let time_step = 0.1;
     let animacion;
-    let tiempo = 2; //TIEMPO RESTANTE EN SEGUNDOS
+    let tiempo = 15; //TIEMPO RESTANTE EN SEGUNDOS
 
 
     function gameLoop() {
@@ -56,7 +62,9 @@ window.addEventListener("load", function(evt) {
            }
            if (counter_time > 1.0) {
                --cuenta;
-               numeros[cuenta].play();
+               if (cuenta) {				
+            	   numeros[cuenta].play();
+               }
                $("#cuchito").text(cuenta);
                $("#cuchito").css({
                    opacity: '1.0',
@@ -65,7 +73,6 @@ window.addEventListener("load", function(evt) {
                if (cuenta==0) {
                $("#cuchito").text("");
                    x.play();
-                   b.play();
                    
                    counter_time=0;
                }
@@ -80,6 +87,8 @@ window.addEventListener("load", function(evt) {
            context.arc(45, 45, 20, 0, (counter_time / tiempo) * Math.PI);
            context.stroke();
            if ((counter_time / tiempo) > 2) {
+        	   $("#escore").text(escore);
+        	   $("#nrecetas").text(nrecetas);
                $('#final').modal('show');
                window.cancelAnimationFrame(animacion);
 
@@ -103,6 +112,13 @@ window.addEventListener("load", function(evt) {
     	x.play();
     });
 
+    $( ".reintentar" ).click(function() {
+    	window.location ="/logeado/juego";
+    });
+    $( "#terminar" ).click(function() {
+    	window.location ="/logeado/menuaventuras";
+    });
+
 
     //JUEGO
     $('#cas').on('dragover', function (e) {
@@ -113,6 +129,7 @@ window.addEventListener("load", function(evt) {
 
 
     let ingredientes = new Array();
+    let respaldo = new Array();
     let datos={};
 
     function generaReceta() {
@@ -133,6 +150,7 @@ window.addEventListener("load", function(evt) {
             elemento.setAttribute("indx", index-1);
             elemento.setAttribute("numero", Math.floor(Math.random() * (6 - 1) + 1));
             ingredientes[index-1] = parseInt(elemento.getAttribute("numero"));
+            respaldo[index-1]=parseInt(elemento.getAttribute("numero"));
             $('[objeto='+index.toString()+']').attr("src","/images/cocina/"+tipoa+".png");
             $('[simbolo='+index.toString()+']').attr("src","/images/cocina/s"+ingredientes[index-1].toString()+".png");
         }
@@ -154,13 +172,12 @@ function terminar(e){;}
 
 
     //METODO QUE SE SEJECUTA AL TOMAR UN ELEMENTO
-let acabados=0;
 
     //METODO QUE SE EJECUTA AL SOLTAR UN ELEMENTO EN LA CAEULA
     $('#cas').on('drop', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        numeros[ingredientes[datos.indx]-1].play();
+        numeros[ingredientes[datos.indx]].play();
         --ingredientes[datos.indx];
         
         
@@ -170,10 +187,19 @@ let acabados=0;
 		}
 
         if (ingredientes[datos.indx] < 0) {
-            alert("receta fallida");
+            for (let ind = 0; ind < 4; ind++) {
+                ingredientes[ind]=respaldo[ind];
+				}
+            acabados=0;
+            $('#cas').attr('src', '/images/cocina/c0.png');
+            if (escore>=2) {
+            	escore=$("#score").text();
+            	escore=(parseInt(escore)-2).toString();
+            	$("#score").text(escore);
+       
+            }
         }
         let bandera=true;
-        console.log(ingredientes);
         for (let index = 0; index < 4; index++) {
             if (ingredientes[index]!=0) {
                 bandera=false;   
@@ -181,14 +207,16 @@ let acabados=0;
             
         }
         if(bandera==true) {
+        	++nrecetas;
         	acabados=0;
         	$('#cas').attr('src', '/images/cocina/c0.png')
         	var tururu = document.getElementById("tururu"); 
         	tururu.play();
             generaReceta();
-            let score=$("#score").text();
-            score=(parseInt(score)+10).toString();
-            $("#score").text(score);
+            escore=$("#score").text();
+            escore=(parseInt(escore)+10).toString();
+  
+            $("#score").text(escore);
         }
     });
 

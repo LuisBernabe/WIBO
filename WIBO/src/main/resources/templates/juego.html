@@ -28,7 +28,7 @@
             <div></div>
             <div></div>
                     <button type="button" id="resume" class="btn btn-success" data-dismiss="modal"></button>
-                    <button type="button" id="restart" class="btn btn-danger"></button> 
+                    <button type="button" id="restart" class="reintentar btn btn-danger"></button> 
             <div></div>
             <div></div>
             
@@ -38,8 +38,6 @@
           </div>
         </div>
       </div>
-
-
 <!-- Button trigger modal -->
 
       
@@ -50,12 +48,11 @@
             <div id="transp" class="transp">
             <div id="modal2">
             
-            <div></div>
-            <div></div>
-                    <button type="button" id="resume" class="btn btn-success" data-dismiss="modal"></button>
-                    <button type="button" id="restart" class="btn btn-danger"></button> 
-            <div></div>
-            <div></div>
+            <div id="nrecetas"></div>
+            <div id="escore"></div>
+			<button type="button" id="terminar" class="btn btn-success">Finalizar</button>
+			<button type="button" id="denuez" class="reintentar btn btn-primary">Reintentar</button>
+
             
             
             </div>
@@ -74,14 +71,20 @@
 
 
 
-<audio id="inicial">
-    <source src="/fonts/bonapetit.mp3" type="audio/mpeg">
+
+
+
+<audio id="inicial" volume="0.0">
+    <source src="/fonts/bonapetit.mp3"  type="audio/mpeg">
 </audio>
 <audio id="myamya">
     <source src="/fonts/myamya.mp3" type="audio/mpeg">
 </audio>
 <audio id="tururu">
     <source src="/fonts/tururu.mp3" type="audio/mpeg">
+</audio>
+<audio id="nyahaha">
+    <source src="/fonts/nyahaha.mp3" type="audio/mpeg">
 </audio>
 <audio id="n1">
     <source src="/fonts/1.m4a" type="audio/mpeg">
