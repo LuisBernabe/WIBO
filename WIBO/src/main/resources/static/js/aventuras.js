@@ -17,8 +17,7 @@ $(document).ready(function() {
 
     $('.img-fluid').on("click", function redireccionarPag() {
         var aventura = $(this).attr('name');
-        linkDestino =
-            "/logeado/juego";
+        linkDestino = "/logeado/menuaventuras";
         window.location = linkDestino;
     });
 

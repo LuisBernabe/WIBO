@@ -1,0 +1,13 @@
+body::after{
+    background: url("/images/aventuras/aventura1/capitulo1/cocina_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-position-x: center;
+}

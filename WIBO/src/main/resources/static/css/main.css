@@ -47,13 +47,12 @@ body{
 .btn:focus {
     color: #000;
     background-color: #c1d045;
-}
 
 .btn-secondary{
 background-color: #b94a48 !important;
 }
 
-.btn-secondary:hover,
+}.btn-secondary:hover,
  .btn-secondary:focus {
      color: #000;
      background-color: #dc4c18;
